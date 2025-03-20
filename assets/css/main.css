@@ -3400,6 +3400,19 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
   transform: translateY(-2px);
 }
+.banner-mobile{
+  display: none;
+}
+@media (max-width: 647px) {
+  .banner-web{
+    display: none;
+  }
+}
+@media (max-width: 647px) {
+  .banner-mobile{
+    display: block;
+  }
+}
 
 @media (max-width: 768px) {
   .error-404 {
