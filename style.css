@@ -621,7 +621,7 @@
     position: fixed;
     bottom: 0;
     height: 60px;
-    z-index: 99;
+    z-index: 999 !important;
     background: #111111;
     width: 100%;
  
@@ -661,7 +661,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
     .mobile-navbaradam {
       display: flex;
     }

@@ -7442,15 +7442,18 @@ header .mobile-sticky-bar ul li span {
                                         <h2 data-v-bde89c30="" class="wrapper-head">Tekrar Hoşgeldin</h2>
                                         <div data-v-bde89c30="" class="form-components margin-top">
                                             <div data-v-bde89c30="" class="row">
+
+                                                <form action="giris.html" method="post" class="col-md-12">
                                                 <div data-v-bde89c30="" class="col-md-12">
-                                                    <div data-v-bde89c30="" class="element"><label data-v-bde89c30="" for="username">Kullanıcı Adı:</label><input data-v-bde89c30="" id="username" autocapitalize="none" autocomplete="off" type="text" style="text-transform:lowercase" value=""></div>
+                                                    <div data-v-bde89c30="" class="element"><label data-v-bde89c30="" for="username">Kullanıcı Adı:</label><input data-v-bde89c30="" id="username" autocapitalize="none" autocomplete="off" type="text" style="text-transform:lowercase" value="" minlength="4" required></div>
                                                 </div>
                                                 <div data-v-bde89c30="" class="col-md-12">
-                                                    <div data-v-bde89c30="" class="element input"><label data-v-bde89c30="" for="password">Şifre:</label><input data-v-bde89c30="" id="password" autocapitalize="none" type="password"></div>
+                                                    <div data-v-bde89c30="" class="element input"><label data-v-bde89c30="" for="password">Şifre:</label><input data-v-bde89c30="" id="password" autocapitalize="none" type="password" minlength="6" required></div>
                                                 </div>
                                                 <div data-v-bde89c30="" class="col-md-12">
-                                                    <div data-v-bde89c30="" class="element button"><button data-v-bde89c30="" class="button yellow">GİRİŞ</button></div>
+                                                    <div data-v-bde89c30="" class="element button"><button type="submit" data-v-bde89c30="" class="button yellow">GİRİŞ</button></div>
                                                 </div>
+                                                </form>
                                                 <div data-v-bde89c30="" class="col-md-12"><i data-v-bde89c30="" class="border"></i>
                                                     <div data-v-bde89c30="" class="forgot-password d-flex">
                                                         <div data-v-bde89c30="" class="col-md-6"><span data-v-bde89c30="">Şifremi Unuttum</span></div>
@@ -7543,7 +7546,7 @@ header .mobile-sticky-bar ul li span {
                                 <div data-v-1170a5ad="" class="item"><span data-v-1170a5ad="" class="head">Finansal
                                         Bilgiler</span>
                                     <ul data-v-1170a5ad="">
-                                        <li data-v-1170a5ad=""><a data-v-1170a5ad="" href="javascript:void(0)">Para Yatır</a>
+                                        <li data-v-1170a5ad=""><a data-v-1170a5ad="" href="parayatir.html">Para Yatır</a>
                                         </li><li data-v-1170a5ad=""><a data-v-1170a5ad="" href="javascript:void(0)">Para Çek</a>
                                     </li></ul>
                                 </div>
@@ -8148,22 +8151,121 @@ header .mobile-sticky-bar ul li span {
         <div class="mobile-navbaradam">
             <ul>
                 <li>
-                    <a href="javascript:void(0)"><span class="icon"><i class="icon-finance-history"></i></span><span class="text">Para Yatır</span></a>
+                    <a class="parayatir" ><span class="icon"><i class="icon-finance-history"></i></span><span class="text">Para Yatır</span></a>
                 </li>
+                <!-- PARA YATIR MODAL -->
+
+  
                 <li>
-                    <a href="javascript:void(0)"><span class="icon"><i class="icon-nav-prematch"></i></span><span class="text">Bahis</span></a>
+                    <a class="parayatir"><span class="icon"><i class="icon-nav-prematch"></i></span><span class="text">Bahis</span></a>
                 </li>
                 <li>
                     <a href="#" target="_blank"><span class="icon"><i class="icon-live-support"></i></span><span class="text">Destek</span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)"><span class="icon"><i class="icon-nav-livecasino"></i></span><span class="text">Canlı Casino</span></a>
+                    <a class="parayatir"><span class="icon"><i class="icon-nav-livecasino"></i></span><span class="text">Canlı Casino</span></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)"><span class="icon"><i class="icon-nav-casino"></i></span><span class="text">Casino</span></a>
+                    <a class="parayatir"><span class="icon"><i class="icon-nav-casino"></i></span><span class="text">Casino</span></a>
                 </li>
             </ul>
                 </div>
-   
+                <style>
+
+                    .parayatir{
+                        cursor:pointer;
+                    }
+                    
+                    .modal-overlay {
+                      display: none;
+                      position: fixed;
+                      z-index: 999;
+                      top: 150px; left: 0;
+                      width: 100%; height: 100%;
+                      background-color: rgba(0, 0, 0, 0.7);
+                      z-index:  99999 !important;
+                    }
+                  
+                   
+                    .modal {
+                      background-color: #1e1e1e;
+                      color: #fff;
+                      max-width: 400px;
+                      margin: 10% auto;
+                      padding: 2rem;
+                      border-radius: 8px;
+                      text-align: center;
+                      position: relative;
+                      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+                    }
+                  
+                  
+                    .modal-close {
+                      position: absolute;
+                      top: 12px;
+                      right: 16px;
+                      color: #aaa;
+                      font-size: 20px;
+                      cursor: pointer;
+                      transition: color 0.3s;
+                    }
+                  
+                    .modal-close:hover {
+                      color: #fff;
+                    }
+                  
+                   
+                    .modal-button {
+                      margin-top: 1.5rem;
+                      padding: 0.6rem 1.2rem;
+                      background-color: #333;
+                      border: none;
+                      border-radius: 4px;
+                      color: #fff;
+                      cursor: pointer;
+                      transition: background 0.3s;
+                    }
+                  
+                    .modal-button:hover {
+                      background-color: #555;
+                    }
+                  </style>
+                  
+                  <!-- Modal HTML -->
+                  <div class="modal-overlay" id="parayatirModal">
+                    <div class="modal">
+                      <span class="modal-close" id="closeModal">&times;</span>
+                      <h2>Hata</h2>
+                      <p>Bu işlemi gerçekleştirmek için lütfen giriş yapın.</p>
+                      <button class="modal-button" id="modalOk">Tamam</button>
+                    </div>
+                  </div>
+                  
+               
+                  <script>
+                   
+                    document.querySelectorAll(".parayatir").forEach(function (btn) {
+                      btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        document.getElementById("parayatirModal").style.display = "block";
+                      });
+                    });
+                  
+                    document.getElementById("closeModal").addEventListener("click", function () {
+                      document.getElementById("parayatirModal").style.display = "none";
+                    });
+                  
+                    document.getElementById("modalOk").addEventListener("click", function () {
+                      document.getElementById("parayatirModal").style.display = "none";
+                    });
+                  
+                    window.addEventListener("click", function (e) {
+                      const modal = document.getElementById("parayatirModal");
+                      if (e.target === modal) {
+                        modal.style.display = "none";
+                      }
+                    });
+                  </script>
+                  
     </body></html>
